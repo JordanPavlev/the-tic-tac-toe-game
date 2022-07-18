@@ -26,3 +26,5 @@ const Xicon = ({color, size}) =>
       </div>
     )
 }
+
+export default Xicon;

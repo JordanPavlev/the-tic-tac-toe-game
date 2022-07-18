@@ -1,6 +1,6 @@
 import React from 'react';
-import Xicon from './Xicons.js'
-import Oicon from './Oicons.js'
+import Xicon from '../icons/Xicons'
+import Oicon from '../icons/Oicon'
 
 export const Start = () => {
   return (
@@ -28,7 +28,7 @@ export const Start = () => {
           <button className='btn btn-blue' onClick={() => handleStart('user')}>
             new game vs player
           </button>
-        </div>
+        </div>  
 
     </div>
   )

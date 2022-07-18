@@ -26,3 +26,7 @@ const Oicon = ({color,size}) =>
     
     
 }
+
+/*export*/
+
+export default Oicon;
