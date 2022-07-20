@@ -1,8 +1,13 @@
 import React from 'react';
-import Xicon from '../icons/Xicons'
-import Oicon from '../icons/Oicon'
+import { useContext } from 'react';
+import { GameContext } from '../../context/GameContext';
+import Xicon from '../icons/Xicons';
+import Oicon from '../icons/Oicon';
 
 export const Start = () => {
+
+  const { activeUser, setActiveUser, handleStart } = useContext(GameContext);
+
   return (
     <div className='start'>
       <div className='start-header'>
@@ -26,10 +31,12 @@ export const Start = () => {
             new game vs CPU
           </button>
           <button className='btn btn-blue' onClick={() => handleStart('user')}>
+            {" "}
             new game vs player
           </button>
         </div>  
 
     </div>
-  )
-}
+  );
+};
+export default Start;
