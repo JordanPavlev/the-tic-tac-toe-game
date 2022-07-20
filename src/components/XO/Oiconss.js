@@ -3,7 +3,7 @@ import React from "react";
 const Oicon = ({color,size}) =>
 {
      return (
-        <div className={`icon ${color ? "icon" + color : "icon-yellow"} ${
+        <div className={`icon ${color ? "icon-" + color : "icon-yellow"} ${
                 size && "icon-" + size
         }`} >
          <svg

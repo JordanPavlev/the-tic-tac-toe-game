@@ -1,0 +1,20 @@
+.score {
+    text-align: center;
+  }
+  .score__title {
+    font-size: 2rem;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    margin: 30px 0;
+    justify-content: center;
+  }
+  
+  .score__btns {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+  }
+  

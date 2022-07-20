@@ -1,44 +1,5 @@
-.start {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-  }
-  .start__header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .start__players {
-    width: 100%;
-    background-color: var(--color-bg-dark);
-    border-radius: 15px;
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.2);
-  }
-  .start__players span {
-    width: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 15px 10px;
-    border-radius: 10px;
-    cursor: pointer;
-  }
-  .start__players--active {
-    background-color: var(--color-gray);
-    box-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
-  }
-  .start__btns {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
-  /* board  */
-  .board {
-  }
-  .board__header {
+
+.board__header {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -74,6 +35,8 @@
     gap: 30px 20px;
   }
   .board__body .card {
+    background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgb(75, 123, 170) 0%, rgba(68,116,163,1) 90% );
+     
     height: 120px;
     display: flex;
     align-items: center;
@@ -91,6 +54,8 @@
   }
   
   .board__footer {
+    font-size: 18px;
+    font-weight: 800;
     margin-top: 30px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
