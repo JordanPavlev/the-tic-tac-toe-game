@@ -1,3 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Arvo:wght@700&display=swap');
+
+
+
+
 * {
   padding: 0;
   margin: 0;
@@ -6,12 +11,12 @@
 
 :root {
   --color-bg-dark: #3e5968;
-  --color-bg-light: #304d59;
-  --color-gray: #ADD8E6;
-  --color-gray-dark: #7a8991;
-  --color-yellow: #795ab9;
+  --color-bg-light: #D2691E;
+  --color-gray: #891C43;
+  --color-gray-dark: #891C43;
+  --color-yellow: #FF013C;
   --color-yellow-dark: #5b438a;
-  --color-blue: #a3c4e6;
+  --color-blue: #9cc6f1;
   --color-blue-dark: #1969b8;
 
   --shadow-y: 6px;
@@ -23,8 +28,11 @@ html {
   font-size: 16px;
 }
 body {
-  background-image: linear-gradient( 0.3deg,  rgba(6,17,33,1) 1.1%, rgba(42,98,226,1) 97.3% );
+  background-image: url("./assets/background-image.jpg");
+  background-size: cover;
   color: var(--color-gray);
+  font-family: 'Arvo', serif;
+
 }
 
 .App {
@@ -42,11 +50,10 @@ body {
 
 /* utilites  */
 .card {
-  padding: 25px;
+  padding: 45px;
   display: flex;
   flex-direction: column;
   gap: 25px;
-  border-radius: 15px;
   background-color: var(--color-bg-light);
   text-align: center;
 }
@@ -92,48 +99,88 @@ body {
   color: var(--color-bg-light);
 }
 
-.btn {
-  background-color: var(--color-gray);
-  border: none;
-  font-size: 1.125rem;
-  font-weight: bold;
-  padding: 12px 25px;
-  border-radius: 10px;
-  text-transform: uppercase;
+.btn, .btn::after {
+  width: 280px;
+  height: 86px;
+  font-size: 22px;
+  background: linear-gradient(45deg, transparent 5%, #FF013C 5%);
+  border: 0;
+  color: #fff;
   cursor: pointer;
-  transition: all 0.2s;
-  box-shadow: 0 var(--shadow-y) 0 var(--color-gray-dark);
-  margin-bottom: 8px;
-  display: inline-block;
-  color: var(--color-bg-light);
+  outline: transparent;
+  position: relative;
 }
-.btn:hover {
-  --shadow-y: 8px;
-  transform: translateY(-2px);
-}
-
-.btn:active {
-  transform: translateY(2px);
-  --shadow-y: 4px;
-}
-.btn-sm {
-  --shadow-y: 4px;
-}
-.btn-sm:hover {
-  --shadow-y: 6px;
-}
-.btn-sm:active {
-  --shadow-y: 3px;
-}
-
-.btn-yellow {
-  background-color: var(--color-yellow);
-  box-shadow: 0 var(--shadow-y) 0 var(--color-yellow-dark);
+.btn::after {
+  --slice-0: inset(50% 50% 50% 50%);
+  --slice-1: inset(80% -6px 0 0);
+  --slice-2: inset(50% -6px 30% 0);
+  --slice-3: inset(10% -6px 85% 0);
+  --slice-4: inset(40% -6px 43% 0);
+  --slice-5: inset(80% -6px 5% 0);
+  
+  content: 'NEW GAME VS';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  line-height: 64px;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent 3%, #00E6F6 3%, #00E6F6 5%, #FF013C 5%);
+  text-shadow: -3px -3px 0px #F8F005, 3px 3px 0px #00E6F6;
+  clip-path: var(--slice-0);
 }
 
-.btn-blue {
-  background-color: var(--color-blue);
-  box-shadow: 0 var(--shadow-y) 0 var(--color-blue-dark);
+.btn:hover::after {
+  animation: 1s glitch;
+  animation-timing-function: steps(2, end);
+}
+
+@keyframes glitch {
+  0% {
+    clip-path: var(--slice-1);
+    transform: translate(-20px, -10px);
+  }
+  10% {
+    clip-path: var(--slice-3);
+    transform: translate(10px, 10px);
+  }
+  20% {
+    clip-path: var(--slice-1);
+    transform: translate(-10px, 10px);
+  }
+  30% {
+    clip-path: var(--slice-3);
+    transform: translate(0px, 5px);
+  }
+  40% {
+    clip-path: var(--slice-2);
+    transform: translate(-5px, 0px);
+  }
+  50% {
+    clip-path: var(--slice-3);
+    transform: translate(5px, 0px);
+  }
+  60% {
+    clip-path: var(--slice-4);
+    transform: translate(5px, 10px);
+  }
+  70% {
+    clip-path: var(--slice-2);
+    transform: translate(-10px, 10px);
+  }
+  80% {
+    clip-path: var(--slice-5);
+    transform: translate(20px, -10px);
+  }
+  90% {
+    clip-path: var(--slice-1);
+    transform: translate(-10px, 0px);
+  }
+  100% {
+    clip-path: var(--slice-1);
+    transform: translate(0);
+  }
 }
 
 .shadow-gray {

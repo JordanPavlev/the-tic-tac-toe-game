@@ -1,32 +1,104 @@
+$color: black;
+$color2: #FF013C;
+$radius: .35rem;
+$border-width: 3px;
+$color-bg: white;
+$offset: .5rem;
+$transition: .3s;
+
 
 .board__header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     margin-bottom: 50px;
   }
   
+
+
+  
   .board__turn {
-    border-radius: 5px;
-    background-color: var(--color-bg-light);
+    justify-content: center;
+    width: 60%;
+    color: #891C43;
+    font-size: 20px;
+    align-items: center;
+    border-radius: 120px 0 120px 0;
+    background-color: #fa8525;
     box-shadow: 0 4px 0 rgba(0, 0, 0, 0.2);
     padding: 8px 12px;
     display: flex;
     align-items: center;
-    gap: 4px;
-  }
-  
-  .board__restart svg {
-    height: 20px;
+    font-weight: 900;
+    gap: 8px;
+    background-image: linear-gradient(to right, #FF512F 0%, #F09819  51%, #FF512F  100%);
+    margin: 10px;
+    padding: 15px 45px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;            
     display: flex;
-    align-items: center;
-    justify-content: center;
-    transform-origin: center;
-    transition: all 0.3s;
+  }
+
+  .board__turn:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .board__restart svg {
+    height: 40px; 
+    display: flex;
+    margin: 7px;
+    transition: all 0.8s;
   }
   
-  .board__restart:active svg {
-    transform: rotate(180deg);
+  .board__restart {
+  width: 100%;
+  font-weight: 900;
+  border: solid $border-width $color;
+  font-size: 45px;
+  background-color: #fa8525;
+  border-radius: $radius;
+  position: relative;
+  cursor: pointer;
+  
+  &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 39px;
+      height: 100%;
+      background-color: $color2;
+      z-index: -1;
+      border-radius: $radius;
+      border: solid $border-width $color;
+      transition: all $transition ease-in-out;
+  }
+
+  &::after {
+    border: 0;
+    box-shadow: 0px 0px 0px $border-width $color;
+    width: calc(100%);
+    height: calc(100%);
+}
+
+&:hover {
+  &::after {
+    top: -#{$offset};
+    left: -#{$offset};
+    width: calc(100% + #{$offset} * 2);
+    height: calc(100% + #{$offset} * 2);
+  }
+}
+
+  }
+  
+  .board__restart:hover svg {
+    transform: rotate(360deg);
   }
   
   .board__body {
@@ -36,13 +108,13 @@
   }
   .board__body .card {
     background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgb(75, 123, 170) 0%, rgba(68,116,163,1) 90% );
-     
     height: 120px;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     padding-inline: 10px;
+    border-radius: 40%;
   }
   
   .board__body .active.shadow-blue {
@@ -54,7 +126,8 @@
   }
   
   .board__footer {
-    font-size: 18px;
+    font-size: 36px;
+    color: white;
     font-weight: 800;
     margin-top: 30px;
     display: grid;
@@ -63,4 +136,8 @@
   }
   .board__footer .card {
     gap: 15px;
+    color: white;
+    border-radius: 15px;
   }
+
+           
