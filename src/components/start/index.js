@@ -14,10 +14,7 @@ export const Start = () => {
 
   return (
     <div className='start'>
-      <div className='start-header'>
-        <Xicon/>
-        <Oicon/>
-      </div>
+      
       <div className='card shadow-gray' >
           <h1 className='text-lg'>Pick your mark</h1>
           <div className='start__players'>

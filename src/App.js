@@ -7,9 +7,13 @@ import  Modal  from "./components/modal"
 import { GameContext } from './context/GameContext';
 
 
+
 function App() {
     //Context
     const { screen } = useContext(GameContext)
+    
+
+    
   return (
     <div className="App">
      <div className='container'>

@@ -7,9 +7,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    color: blue;
   }
   .start__players {
     width: 100%;
+  
     background-color: #FF013C;
     border-radius: 15px;
     display: flex;
@@ -24,7 +26,6 @@
     justify-content: center;
     padding: 15px 10px;
     border-radius: 10px;
-    cursor: pointer;
   }
   .start__players--active {
     background-color: var(--color-gray);
