@@ -1,0 +1,41 @@
+.start {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.start__header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.start__players {
+  width: 100%;
+  background-color: #FF013C;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.start__players span {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 10px;
+  border-radius: 10px;
+}
+
+.start__players--active {
+  background-color: var(--color-gray);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+}
+
+.start__btns {
+  display: flex;
+  font-size: 12px;
+  align-items: center;
+  gap: 22px;
+}/*# sourceMappingURL=start.css.map */
