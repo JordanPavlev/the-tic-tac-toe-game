@@ -34,8 +34,7 @@ export const Start = () => {
             New game vs <br/> CPU
           </button>
           <button className='btn btn-blue' onClick={() => handleStart('user')}>
-            
-            New game vs PLAYER
+            New game vs<br/> PLAYER
           </button>
         </div>  
 

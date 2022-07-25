@@ -10,7 +10,7 @@ const GameState = (props) => {
   const [playMode, setPlayMode] = useState("user"); // user || cpu
   const [activeUser, setActiveUser] = useState("x"); // x || o
   const [squares, setSquares] = useState(new Array(9).fill(""));
-  const [xnext, setXnext] = useState(false);
+  const [nextx, setnextx] = useState(false);
   const [winner, setWinner] = useState(null);
   const [winnerLine, setWinnerLine] = useState(null);
   const [ties, setTies] = useState({ x: 0, o: 0 });
@@ -19,13 +19,13 @@ const GameState = (props) => {
 
   useEffect(() => {
     //check if cpu turn
-    let currentUser = xnext ? "o" : "x";
+    let currentUser = nextx ? "o" : "x";
     if (playMode === "cpu" && currentUser !== activeUser && !winner) {
       cpuNextMove(squares);
     }
     checkNoWinner();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [xnext, winner, screen]);
+  }, [nextx, winner, screen]);
 
   const handleStart = (player) => {
     setPlayMode(player);
@@ -36,14 +36,14 @@ const GameState = (props) => {
     if (squares[ix] || winner) {
       return;
     }
-    let currentUser = xnext ? "o" : "x";
+    let currentUser = nextx ? "o" : "x";
     if (playMode === "cpu" && currentUser !== activeUser) {
       return;
     }
     let ns = [...squares];
-    ns[ix] = !xnext ? "x" : "o";
+    ns[ix] = !nextx ? "x" : "o";
     setSquares(ns);
-    setXnext(!xnext);
+    setnextx(!nextx);
     checkWinner(ns);
   };
 
@@ -63,15 +63,15 @@ const GameState = (props) => {
   const cpuNextMove = (sqrs) => {
     let bestmove = calcBestMove(sqrs, activeUser === "x" ? "o" : "x");
     let ns = [...squares];
-    ns[bestmove] = !xnext ? "x" : "o";
+    ns[bestmove] = !nextx ? "x" : "o";
     setSquares(ns);
-    setXnext(!xnext);
+    setnextx(!nextx);
     checkWinner(ns);
   };
 
   const handleReset = () => {
     setSquares(new Array(9).fill(""));
-    setXnext(false);
+    setnextx(false);
     setWinner(null);
     setWinnerLine(null);
     setActiveUser("x");
@@ -82,7 +82,7 @@ const GameState = (props) => {
 
   const handleNextRound = () => {
     setSquares(new Array(9).fill(""));
-    setXnext(winner === "x");
+    setnextx(winner === "x");
     setWinner(null);
     setWinnerLine(null);
     hideModal();
@@ -103,7 +103,7 @@ const GameState = (props) => {
         squares,
         winner,
         winnerLine,
-        xnext,
+        nextx,
         ties,
         screen,
         activeUser,

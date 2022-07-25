@@ -26,9 +26,7 @@ export const Board = () => {
     const checkUser = (user) => {
       if (playMode === "cpu") {
         if (user === activeUser) {
-          return "(you)";
         } else {
-          return "(cpu)";
         }
       }
     };

@@ -3,21 +3,25 @@
     flex-direction: column;
     gap: 25px;
   }
+
+  @media screen and (max-width: 428px) {
+
+    .start {
+      
+    }
+   }
   .start__header {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: blue;
   }
   .start__players {
     width: 100%;
-  
     background-color: #FF013C;
     border-radius: 15px;
     display: flex;
     align-items: center;
     padding: 10px;
-    box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.2);
   }
   .start__players span {
     width: 50%;

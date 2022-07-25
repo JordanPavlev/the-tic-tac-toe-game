@@ -130,9 +130,28 @@ $transition: .3s;
     color: white;
     font-weight: 800;
     margin-top: 30px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    justify-content: center;
     gap: 20px;
+  }
+
+
+  @media screen and (max-width: 428px) {
+    .board__footer {
+      gap: 14px;
+      color: #FF512F;
+      justify-content: space-around;
+    }
+  }
+
+  @media screen and (max-width: 360px) {
+
+    .board__footer {
+      font-size: 22px;
+      gap: px;
+    }
+
+    
   }
   .board__footer .card {
     gap: 15px;

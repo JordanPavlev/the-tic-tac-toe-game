@@ -57,6 +57,12 @@ body {
   text-align: center;
 }
 
+@media screen and (max-width: 380px) {
+  .card {
+    padding: 35px;
+  }
+}
+
 .bg-light {
   background-color: var(--color-gray);
   color: var(--color-bg-dark);
@@ -188,9 +194,6 @@ body {
   }
 }
 
-.shadow-gray {
-  box-shadow: 0 8px 0 rgba(0, 0, 0, 0.2);
-}
 .shadow-blue {
   box-shadow: 0 8px 0 var(--color-blue-dark);
 }
